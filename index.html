@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Food-court.">
+        <!-- Always include this line of code!!! -->
+        <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="index.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <title>Eat Food</title>
+
+        <style>
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/**************************/
+/* HEADER */
+/**************************/
+body{
+  background: linear-gradient(to left , #ffb6ec, #ffefb5 );
+  overflow:hidden;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff7171;
+  /* Because we want header to be sticky later */
+  height: 4.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+  font-family: italic;
+  font-weight: bold;
+}
+/**************************/
+/* NAVIGATION */
+/**************************/
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-weight: 900;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+/* MOBILE */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #000;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* STICKY NAVIGATION */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(88, 38, 38, 0.97);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
+/**************************/
+/* HERO SECTION */
+/**************************/
+
+.section-hero {
+  background: linear-gradient(to left , #ffb6ec, #ffefb5 );
+  /*padding: 4.8rem 0 9.6rem 0;*/
+}
+
+.hero {
+  /*max-width: 130rem;*/
+  margin: 0 auto;
+  padding: 0 0 0 9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.hero-description {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+  color: #000;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%; /* Ensure the image takes up the full height of its container */
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.delivered-meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
+
+/**************************/
+/* HOW IT WORKS SECTION */
+/**************************/
+
+.section-how {
+  padding: 9.6rem 0;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 100;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.step-text-box{
+  
+  background-color: #ff7171;
+    padding: 25px;
+}
+
+
+.step-description {
+  font-size: 4.8rem;
+  color: #000;
+  padding-bottom: 2rem;
+  font-weight: 100;
+}
+
+.step-img-box {
+
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Two columns */
+  grid-template-rows: auto; /* Single row for images */
+  gap: 10px; /* Adjust the gap between images */
+  align-content: start; /* Align grid items at the start of the grid container */
+}
+.step-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.step-img:nth-child(1){
+  height: 100%;
+  grid-row: 1;
+}
+.step-img:nth-child(2) {
+  height: 100%; 
+  grid-row: 2;
+}
+
+.step-img:nth-child(3) {
+  height: 100%; /* Full height for child 3 */
+  grid-row: span 2;
+}
+
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+}
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .grid {
+    column-gap: 2.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-img {
+    width: 100%;
+  }
+
+  .heading-primary {
+    font-size: 1.6rem;
+    line-height: 1.05;
+    margin-bottom: 7rem;
+    margin-top: 30PX;
+}
+
+  /* MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+    padding-left: 80%;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+}
+
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
+
+@media (max-width: 44em) {
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+
+@media (max-width: 34em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+  .grid--2-cols{
+    grid-template-columns: 1fr;
+  }
+  .btn,
+  .btn:link,
+  .btn:visited {
+      padding: 1rem 4.2rem;
+  }
+  .hero {
+    padding: 0 3.2rem;
+  }
+  .hero-img {
+    width: 120%;
+    height: 200px;
+}
+  .heading-primary {
+    font-size: 1.4rem;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+}
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+  color: #000;
+}
+  .step-text-box {
+    background-color: #ff7171;
+    padding: 10px;
+}
+.step-description {
+  font-size: 1.8rem;
+  color: #000;
+  padding-bottom: 2rem;
+  font-weight: 100;
+}
+.heading-tertiary {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+  color: rgb(14, 13, 13);
+}
+  
+}
+
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
+
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 9.6rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.grid--center-v {
+  align-items: center;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 100;
+  color: #000;
+  letter-spacing: 1.5px;
+}
+
+.heading-primary {
+  font-size: 1.8rem;
+  line-height: 1.05;
+  margin-bottom: 7rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+  color: rgb(14, 13, 13);
+}
+
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 100;
+  padding: 1rem 6.2rem;
+  border-radius: 1px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #ff7171;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #ff7171;
+}
+
+
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  line-height: 1.2;
+}
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+</style>
+
+    </head>
+    <body>
+        <header class="header">
+            <nav class="main-nav">
+                <ul class="main-nav-list">
+                    <li>
+                        <a class="main-nav-link" href="#">H o m e</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">O r d e r</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">F o o d</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">R e s t a u r a n t</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">T e s ti m o n i a l s</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">C o n t a c t U s</a>
+                    </li>
+                </ul>
+            </nav>
+             <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+        </header>
+        <!-- ********************** section hero ***************************** -->
+        <section class="section-hero">
+            <div class="hero">
+                <div class="hero-text-box">
+                    <h1 class="heading-primary">
+                        LOREM IPSUM
+                    </h1>
+                    <p class="hero-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                          id est vitae dolor rhoncus tristique. Maecenas metus quam,
+                          rhoncus euismod lorem in, sollicitudin viverra eros. Donec
+                          dictum luctus quam ut tristique. Curabitur nec faucibus purus.
+                          Quisque congue sem nec justo mollis, in tincidunt erat pretium.
+                          Sed pulvinar, massa ac porta viverra.
+                    </p>
+                    <a href="#cta" class="btn btn--full margin-right-sm">
+                        Click Me
+                    </a
+            >
+                </div>
+                <div class="hero-img-box">
+                    <picture>
+                        <img src="imagessimplotel/pexels-robin-stickel-70497.jpg" class="hero-img" alt="Woman enjoying food, meals in storage container, and food bowls on a table">
+                    </picture>
+                </div>
+            </div>
+        </section>
+        <!-- ********************** section hero ***************************** -->
+        <!-- ********************** section hero ***************************** -->
+        <section class="section-how">
+            <div class="container grid grid--2-cols grid--center-v">
+                <!-- STEP 01 -->
+                <div class="step-img-box">
+                    <img src="imagessimplotel/pexels-rachel-claire-6752433.jpg" class="step-img" alt=" image 1">
+                    <img src="imagessimplotel/pexels-eva-bronzini-6141651.jpg" class="step-img" alt="image 2">
+                    <img src="imagessimplotel/pexels-mister-mister-3434523.jpg" class="step-img" alt="image 3">
+                </div>
+                <div class="step-text-box">
+                    <h3 class="heading-tertiary">
+                        LOREM IPSUM
+                    </h3>
+                    <p class="step-description">
+                        LOREM IPSUM
+                        <br>
+                        SET ADEMIR
+                    </p>
+                    <h5 style="font-size:1.4rem; color:black;font-weight: 100;">
+                        Click
+                        <img class="arrow" src="imagessimplotel/icons8-arrow-30.png">
+                    </h5>
+                </div>
+            </div>
+        </section>
+        <script>
+///////////////////////////////////////////////////////////
+// Make mobile navigation work
+
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
+
+///////////////////////////////////////////////////////////
+// Smooth scrolling animation
+
+const allLinks = document.querySelectorAll("a:link");
+
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+
+    // Scroll back to top
+    if (href === "#")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    // Scroll to other links
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Close mobile naviagtion
+    if (link.classList.contains("main-nav-link"))
+      headerEl.classList.toggle("nav-open");
+  });
+});
+
+
+
+        </script>
+    </body>
+</html>
